@@ -1,5 +1,9 @@
 # stm32-ssd1306
 
+// Added additional rectangle and line drawing options
+// Added "howto" with specifics from cubemx regarding i2c configuration, clock setup.
+
+
 STM32 library for working with OLEDs based on SSD1306, SH1106 and SSD1309,
 supports I2C and 4-wire SPI.
 
