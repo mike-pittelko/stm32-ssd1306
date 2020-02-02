@@ -77,6 +77,15 @@ extern SPI_HandleTypeDef SSD1306_SPI_PORT;
 #error "You should define SSD1306_USE_SPI or SSD1306_USE_I2C macro!"
 #endif
 
+
+// Uncomment to enable the appropriate feature:
+// To mirror horizontally
+//#define SSD1306_MIRROR_HORIZ
+// To mirror vertically
+//#define SSD1306_MIRROR_VERT
+// To invert color
+//#define SSD1306_INVERSE_COLOR
+
 // SSD1306 OLED height in pixels
 #ifndef SSD1306_HEIGHT
 #define SSD1306_HEIGHT          64
@@ -112,7 +121,9 @@ void ssd1306_DrawPixel(uint8_t x, uint8_t y, SSD1306_COLOR color);
 char ssd1306_WriteChar(char ch, FontDef Font, SSD1306_COLOR color);
 char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
 void ssd1306_SetCursor(uint8_t x, uint8_t y);
-
+void ssd1306_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, SSD1306_COLOR c);
+void ssd1306_DrawRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h, SSD1306_COLOR c);
+void ssd1306_DrawFilledRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h, SSD1306_COLOR c);
 // Low-level procedures
 void ssd1306_Reset(void);
 void ssd1306_WriteCommand(uint8_t byte);
